@@ -5,7 +5,7 @@ GPIO.setmode(GPIO.BCM)
 led = 26
 GPIO.setup(led, GPIO.OUT)
 button = 13
-GPIO.setup(button, GPIO.OUT)
+GPIO.setup(button, GPIO.IN)
 led_flag = 0
 while True:
     if GPIO.input(button):
