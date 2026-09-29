@@ -16,10 +16,11 @@ def dec2bin(value):
     return [int(element) for element in bin(value)[2:].zfill(8)]
 while True:
     if (GPIO.input(bu_up) and GPIO.input(bu_down)):
+        time.sleep(0.5)
         while True:
             GPIO.output(leds, 1)
-            time.sleep(0.2)
-            if(GPIO.input(bu_down)):
+            
+            if(GPIO.input(bu_down) or GPIO.input(bu_up)):
                 break
     if GPIO.input(bu_up):
         if (num <= 255):
